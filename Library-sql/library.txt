@@ -1,0 +1,36 @@
+表名     属性名           属性说明           类型          约束
+
+USER 
+        uid             // 用户id         var(10)      primary key
+        name            // 姓名           var(10)      not null
+        username        // 用户名         var(10)      not null unique
+        password        // 密码           var(32)      not null
+        phone           // 电话           var(11)      not null
+        isAdmin         // 是否为管理员     tinyint      default false	
+
+BOOK 
+        bid             // 书id           int          primary key
+        title           // 书名            var(20)     not null
+        author          // 作者            var(20)     not null
+        pubishDate      // 出版日期         date        not null   
+        pubisher        // 出版社          var(20)      not null
+        cover           // 封面            var(100)    defalut
+        abs             // 描述            var(255)   
+        cid             // 类别            int         ref category(cid)
+        location        // 位置            var(20)     not null
+        nums            // 数量            int         default 0
+
+CATEGORY
+	cid                // 类别id          int        primary key
+	cname              // 类别名字         var(10)    not null
+
+BORROW 
+	bid                // 书id           int         ref book(bid)
+	uid	             // 用户id          var(10)     ref user(uid)
+
+
+
+
+
+
+	
